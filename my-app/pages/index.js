@@ -307,7 +307,7 @@ export default function Home() {
       return (
         <div className={styles.description}>
           You do not own any CryptoDevs NFTs. <br />
-          <b>You can't create or vote on proposals</b>
+          <b>You can not create or vote on proposals</b>
         </div>
       );
     } else {
