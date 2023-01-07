@@ -202,7 +202,7 @@ export default function Home() {
   // the passed proposal ID
   const executeProposal = async (proposalId) => {
     try {
-      const signer = getProviderOrSigner(true);
+      const signer = await getProviderOrSigner(true);
       const daoContract = getDaoContractInstance(signer);
       const txn = await daoContract.executeProposal(proposalId);
       setLoading(true);
@@ -212,7 +212,7 @@ export default function Home() {
       getDAOTreasuryBalance();
     } catch (err) {
       console.error(err);
-      window.alert(err.data.message);
+      window.alert(err.reason);
     }
   };
 
